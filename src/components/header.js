@@ -1,22 +1,42 @@
+import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
-import CTA from './CTA'
 import styled from 'styled-components'
+import CTA from './CTA'
 
 const MyHeader = styled.header`
-  background-color: #eee;
-  opacity: 0.9;
+  background-color: transparent;
   width: 100%;
   min-height: 70px;
   position: fixed;
-  z-index: 100;
-  padding: 0.5rem 4rem;
+  z-index: 10;
+  padding: 0.5rem 7%;
 `
 const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  .logoContainer {
+    text-align: center;
+    padding-top: 16px;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      transform: skewY(8deg);
+      opacity: 0.9;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #ffca96;
+      transform: skewY(-8deg);
+    }
+  }
 
   nav {
     display: flex;
@@ -32,9 +52,19 @@ const NavContainer = styled.div`
     li {
       margin: 0 20px;
 
+      &:last-of-type {
+        margin-right: 60px;
+      }
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+
       a {
         text-decoration: none;
-        color: white;
+        color: #ffca96;
+        font-weight: 700;
+        font-size: 0.9rem;
       }
     }
   }
@@ -43,20 +73,24 @@ const NavContainer = styled.div`
 const Header = ({ siteTitle }) => (
   <MyHeader>
     <NavContainer>
-      <div className="logoContainer">LOGO</div>
+      <Link to="/">
+        <div className="logoContainer">
+          <h2>bf.io</h2>
+        </div>
+      </Link>
       <nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/work">Work</Link>
+            <Link to="/works">Work</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
           </li>
         </ul>
-        <CTA text="Contact me!" />
+        <CTA text="Contact Me" />
       </nav>
     </NavContainer>
   </MyHeader>
