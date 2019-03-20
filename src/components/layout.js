@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
@@ -15,11 +8,17 @@ import Footer from './footer'
 import './layout.css'
 
 const AppContainer = styled.div`
-  @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400');
+  @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700,900');
   font-family: 'Nunito Sans', sans-serif;
+  color: #222;
 
-  h1 {
-    font-family: 'Nunito Sans';
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Nunito Sans', sans-serif;
   }
 `
 
