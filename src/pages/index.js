@@ -1,55 +1,72 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import Grid from '@material-ui/core/Grid'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
 import SEO from '../components/seo'
-import ProjectCard from '../components/ProjectCard'
+import WorksSection from '../components/worksSection'
 
 const HeaderSection = styled.section`
-  background-color: #333;
+  background: #2948ff;
+  background: -webkit-linear-gradient(to right bottom, #2948ff, #22c1c3);
+  background: linear-gradient(to right bottom, #2948ff, #22c1c3);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   color: white;
-  height: 100vh;
-  padding: 100px;
+  height: 300vh;
+  padding: 180px 5%;
 
-  span {
-    text-decoration: underline;
+  h1 {
+    font-size: 65px;
+    font-weight: 700;
+    width: 60%;
+    margin: 2rem auto;
   }
+
+  p {
+    font-size: 30px;
+    line-height: 1.3;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  p:last-of-type {
+    margin-top: 110vh;
+  }
+`
+
+const H2 = styled.h2`
+  margin-left: 7%;
+  margin-top: 60px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 110;
+  width: fit-content;
 `
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <HeaderSection>
-      <h1>ST KILDA</h1>
-      <h1>
-        S<sup>T</sup> KILDA
-      </h1>
-      <h1>
-        S
-        <span>
-          <sup>t</sup>
-        </span>{' '}
-        KILDA
-      </h1>
-      <p>
-        Hi, I'm a junior web developer with a front-end penchant, but I also
-        have a good understanding of the entire web development process. I'm
-        passionate about the JavaScript ecosystem and new technologies.
-      </p>
-
-      <h1>À PROPOS</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam,
-        accusantium. Mollitia, incidunt quaerat. Odit, mollitia et? Amet
-        obcaecati magnam ullam quos nulla nam dignissimos tenetur, atque omnis
-        placeat, rem voluptates eligendi quibusdam. Molestiae omnis neque,
-        dignissimos reprehenderit debitis tenetur recusandae.
-      </p>
+      <Grid container>
+        <Grid item xs={12}>
+          <h1>Baptiste Firket</h1>
+          <p>
+            Hi, I'm a junior web developer with a front-end penchant, but I also
+            have a good understanding of the entire web development process. I'm
+            passionate about the JavaScript ecosystem and new technologies.
+          </p>
+          <p>
+            Hi, I'm a junior web developer with a front-end penchant, but I also
+            have a good understanding of the entire web development process. I'm
+            passionate about the JavaScript ecosystem and new technologies.
+          </p>
+        </Grid>
+      </Grid>
     </HeaderSection>
-    <Image />
-    <ProjectCard />
+    <H2>My Work</H2>
+    <WorksSection />
   </Layout>
 )
 
