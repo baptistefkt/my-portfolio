@@ -32,8 +32,8 @@ const FlexSection = styled.div`
 const LeftSection = styled.div`
   flex: 1;
   padding: 1rem 2rem;
-  position: relative;
-  z-index: 110;
+  /* position: relative;
+  z-index: 110; */
 
   span {
     color: #ffca96;
@@ -56,8 +56,8 @@ const ExperienceDiv = styled.div``
 const RightSection = styled.div`
   flex: 1;
   padding: 1rem 2rem;
-  position: relative;
-  z-index: 110;
+  /* position: relative;
+  z-index: 110; */
 `
 
 const P = styled.p`

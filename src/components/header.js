@@ -32,7 +32,7 @@ const NavContainer = styled.div`
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #ffca96;
       transform: skewY(-8deg);
     }
@@ -51,13 +51,14 @@ const NavContainer = styled.div`
 
     li {
       margin: 0 20px;
+      transition: all 0.2s ease-in;
 
       &:last-of-type {
         margin-right: 60px;
       }
 
       &:hover {
-        transform: translateY(-1px);
+        transform: skewY(-8deg);
       }
 
       a {
@@ -75,7 +76,7 @@ const Header = ({ siteTitle }) => (
     <NavContainer>
       <Link to="/">
         <div className="logoContainer">
-          <h2>bf.io</h2>
+          <h2>bfkt.dev</h2>
         </div>
       </Link>
       <nav>

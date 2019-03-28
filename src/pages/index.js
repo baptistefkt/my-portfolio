@@ -58,9 +58,9 @@ const IndexPage = () => (
           </p>
           <p>
             I've learned how to code less than one year ago at BeCode school in
-            Brussels. Really hard at the beginning. Now ? Making awesome apps
-            and website with the latest technologies and absolutely loving what
-            I do.
+            Brussels. Really hard at the beginning... Now ? I'm making awesome
+            apps and websites with the latest technologies and I'm absolutely
+            loving what I do.
           </p>
         </Grid>
       </Grid>
