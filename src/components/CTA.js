@@ -10,7 +10,7 @@ const Button = styled.button`
   background: linear-gradient(to right top, #ffca96, #fd9653);
   font-size: 0.6rem;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   z-index: 100;
   transition: 0.1s ease-in;
   cursor: pointer;
@@ -24,10 +24,12 @@ const Button = styled.button`
   }
 `
 
-const CTA = props => (
-  <Link to="/about/#contact">
-    <Button>{props.text}</Button>
-  </Link>
-)
+const CTA = ({ text, color }) => {
+  return (
+    <Link to="/about/#contact">
+      <Button>{text}</Button>
+    </Link>
+  )
+}
 
 export default CTA
