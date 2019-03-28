@@ -69,10 +69,19 @@ const RightSection = styled.div`
     color: #437c90;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-align: center;
 
-    &:hover {
-      text-decoration: underline;
+    div {
+      border-radius: 30px;
+      border: 2px solid #437c90;
+      width: fit-content;
+      padding: 8px 15px;
+      margin-top: 5rem;
+
+      &:hover {
+        opacity: 0.85;
+      }
     }
   }
 `
@@ -94,7 +103,7 @@ const Work = ({
       <LeftSection>
         <SummaryP>{summary}</SummaryP>
         {images.map(image => (
-          <Image imgName={image.name} />
+          <Image key={image.name} imgName={image.name} />
         ))}
       </LeftSection>
       <RightSection>
@@ -115,13 +124,16 @@ const Work = ({
         <h2>
           Technologies used : <span>{techno}</span>
         </h2>
-
-        <h2>
-          Collaboration : <span>{collab}</span>
-        </h2>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          → Visit the website here
-        </a>
+        {collab !== '' ? (
+          <h2>
+            Collaboration : <span>{collab}</span>
+          </h2>
+        ) : null}
+        {link !== '' ? (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <div>→ Visit the website</div>
+          </a>
+        ) : null}
       </RightSection>
     </FlexDiv>
   </PageWrapper>

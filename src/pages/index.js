@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Grid from '@material-ui/core/Grid'
 
@@ -20,7 +19,7 @@ const HeaderSection = styled.section`
     font-size: 65px;
     font-weight: 700;
     width: 60%;
-    margin: 2rem auto;
+    margin: 3rem auto;
   }
 
   p {
@@ -53,14 +52,15 @@ const IndexPage = () => (
         <Grid item xs={12}>
           <h1>Baptiste Firket</h1>
           <p>
-            Hi, I'm a junior web developer with a front-end penchant, but I also
-            have a good understanding of the entire web development process. I'm
+            Hi, I'm a web developer with a front-end penchant, but I also have a
+            good understanding of the entire web development process. I'm
             passionate about the JavaScript ecosystem and new technologies.
           </p>
           <p>
-            Hi, I'm a junior web developer with a front-end penchant, but I also
-            have a good understanding of the entire web development process. I'm
-            passionate about the JavaScript ecosystem and new technologies.
+            I've learned how to code less than one year ago at BeCode school in
+            Brussels. Really hard at the beginning. Now ? Making awesome apps
+            and website with the latest technologies and absolutely loving what
+            I do.
           </p>
         </Grid>
       </Grid>

@@ -30,10 +30,10 @@ const WorksSection = props => (
         tag="NextJS"
       />
       <ProjectCard
-        imgLabel="gyuto-music.png"
+        imgLabel="portfolio-home.png"
         title="Portfolio"
         slug="portfolio"
-        description="Custom website | Desing &amp; Front-End"
+        description="Personal website | Desing &amp; Front-End"
         tag="Gatsby"
       />
     </Grid>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
@@ -146,6 +145,12 @@ const Twitter = styled.span`
   }
 `
 
+// const Stackoverflow = styled.span`
+//   a {
+//     cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAACZUlEQVRIib2Wz4uVVRjHP8/lMshwGWQYRERkCJlVDIOCtZikP0BMWkQkhLQS3LXLnf4PrkNauGgREdRikHAhCIJIZWQUhSZCUepMiYP6/bTwNFzuzL3zy+a8vPC+73me53O+zznPe06J7ETr7AhlOyBjF5kzzm7MYYtXkln1F/Vrdfd69ltWVFV3gGvqUeAjZNfLU6QddV6daO8z6l31T/X4KN/NputIkvvqgjrTYO+o/yS5rU6/FJC6X/08yXP1ujqfZEy9oC4nuaSObx/0AjalfprkqfqzejTJgSTX1afq+1sGJZlWT6ysLh1TzyVZUpfUD5q6P9R7SV7fNChJJ8lZ9ZF6Jcl76mSSXpLTSR60xXCu3ZdX5m9TirSrHktytaVL9Yp6St2tvq3eV5fVD5NMbm+OtKceU79Ql5Isq7eSnFbfVS+prwzz30jq9quT6nhTN5HkhPpVm5/lpvDIqDjdkcUcdwEfA4fUG1V1E7gFfAecBF4Fzqi9qvppVKzVIJkEuhS/V9U48Ku6r6rmgDfVZ8Ai8FD9oaq+AT4DFpE9wBOKxVW/LBnYj+Siuhd4qzr1xNgB9lXVQeAgcBiYB2aAseb1BvAb8AmwQHF+fUVwCDhQVV3jWFVNAQF+bPeXzW5Cnauqw8D3wN42gDsbS12/3KpZ9UJV9QBUqqq/H/Uv2r7W37chUJ9DB5gAesMCVdUzoKOuGsi6oP8c2kp7jTV24j6bAH9X1ZQOP38MU9QBpoHHg4GHwKZ4Ma+bA7W6+LYFWQH0Pw9+G5W2YaAbVbVSB4OBB9sa/bfXtFtVR/9T27Fz3b9bKSnK2ljwmwAAAABJRU5ErkJggg=='), auto;
+//   }
+// `
+
 const About = () => (
   <Layout>
     <SEO title="About Me" />
@@ -199,14 +204,14 @@ const About = () => (
             Apollo-graphQL
           </p>
           <h3>Back End</h3>
-          <p>NodeJS, ExpressJS, GraphQL, MySQL, PostgressQL</p>
+          <p>NodeJS, ExpressJS, GraphQL, MySQL, MongoDB</p>
           <h3>Tools</h3>
-          <p>Git, Contentful, Algolia, Figma, Wordpress</p>
+          <p>Git, Contentful, Algolia, Figma, Wordpress, Netlify, Heroku</p>
         </RightSection>
       </FlexSection>
       <P id="contact">
         If you need more informations, want to discuss or even hire me, feel
-        free to reach out :
+        free to contact me at :
       </P>
       <Contact>
         <h3>Baptiste Firket</h3>
