@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import styled from 'styled-components'
 
-import ProjectCard from './ProjectCard'
+import ProjectCard from './projectCard'
 
 const WorkContainer = styled.div`
   width: 90%;
