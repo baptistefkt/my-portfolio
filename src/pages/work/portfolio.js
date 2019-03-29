@@ -30,6 +30,7 @@ const Gyuto = () => (
       summary={summary}
       year="2019"
       type="Personal website"
+      // eslint-disable-next-line
       role="Front-end development and Design"
       techno="Gatsby, Styled-components"
       collab=""
