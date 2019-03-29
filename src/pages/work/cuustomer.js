@@ -33,6 +33,7 @@ const Cuustomer = () => (
       summary={summary}
       year="2018-2019"
       type="Web App"
+      // eslint-disable-next-line
       role="Front-end development, SEO optimisation"
       techno="ReactJS, NextJS, Contentful, Apollo-graphQL"
       collab="Aron Dadi, Quentin Claes, Nicolay Yadrychnikov, Geoffrey Poelmans, Massimo Regaglia"
