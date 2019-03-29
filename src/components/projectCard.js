@@ -8,13 +8,19 @@ import Image from '../components/image'
 // -------------- CSS --------------- //
 
 const ProjectContainer = styled.div`
-  margin: 2rem 1rem;
   padding: 2rem;
-  /* border: 1px solid #fff1db; */
-  border-radius: 10px;
+  border-radius: 4px;
   background-color: #fff8ef;
   position: relative;
   z-index: 100;
+
+  @media (max-width: 700px) {
+    margin-bottom: 2rem;
+  }
+
+  /* &:first-of-type {
+    grid-column: 1 / span 2;
+  } */
 
   h3 {
     font-size: 1.4rem;
@@ -61,22 +67,20 @@ const Tag = styled.div`
 // -------------- COMPONENT --------------- //
 
 const ProjectCard = ({ imgLabel, title, slug, description, tag }) => (
-  <Grid item xs={12} sm={6}>
-    <ProjectContainer>
-      <TitleAndTag>
-        <h3>{title}</h3>
-        <Tag>
-          <span>{tag}</span>
-        </Tag>
-      </TitleAndTag>
-      <p>{description}</p>
-      <Link to={`/work/${slug}`}>
-        <ImgWrapper>
-          <Image imgName={imgLabel} />
-        </ImgWrapper>
-      </Link>
-    </ProjectContainer>
-  </Grid>
+  <ProjectContainer>
+    <TitleAndTag>
+      <h3>{title}</h3>
+      <Tag>
+        <span>{tag}</span>
+      </Tag>
+    </TitleAndTag>
+    <p>{description}</p>
+    <Link to={`/work/${slug}`}>
+      <ImgWrapper>
+        <Image imgName={imgLabel} />
+      </ImgWrapper>
+    </Link>
+  </ProjectContainer>
 )
 
 export default ProjectCard

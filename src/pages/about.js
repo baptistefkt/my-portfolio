@@ -28,13 +28,19 @@ const PageWrapper = styled.div`
 const FlexSection = styled.div`
   display: flex;
   margin-bottom: 4rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 
 const LeftSection = styled.div`
   flex: 1;
   padding: 1rem 2rem;
-  /* position: relative;
-  z-index: 110; */
+
+  @media (max-width: 600px) {
+    padding: 1rem 0;
+  }
 
   span {
     color: #ffca96;
@@ -57,8 +63,10 @@ const ExperienceDiv = styled.div``
 const RightSection = styled.div`
   flex: 1;
   padding: 1rem 2rem;
-  /* position: relative;
-  z-index: 110; */
+
+  @media (max-width: 600px) {
+    padding: 1rem 0;
+  }
 `
 
 const P = styled.p`
@@ -78,6 +86,10 @@ const Contact = styled.div`
   color: #ddd;
   border: 1px solid #ffca96;
   border-radius: 5px;
+
+  @media (max-width: 400px) {
+    width: 95%;
+  }
 
   h3 {
     margin-bottom: 0.5rem;

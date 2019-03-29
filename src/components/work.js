@@ -12,14 +12,22 @@ const PageWrapper = styled.div`
     font-size: 2.3rem;
     font-weight: 700;
     margin-left: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     position: relative;
     z-index: 100;
+
+    @media (max-width: 600px) {
+      margin-left: 0;
+    }
   }
 `
 
 const FlexDiv = styled.div`
   display: flex;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 
 const LeftSection = styled.div`
@@ -32,6 +40,18 @@ const LeftSection = styled.div`
   .gatsby-image-wrapper {
     margin: 0 5rem 3rem 0;
   }
+
+  @media (max-width: 600px) {
+    overflow-y: unset;
+    height: unset;
+    margin-right: 0;
+    padding: 0;
+
+    .gatsby-image-wrapper {
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+  }
 `
 const SummaryP = styled.p`
   width: 80%;
@@ -40,6 +60,10 @@ const SummaryP = styled.p`
   color: #888;
   position: relative;
   z-index: 100;
+
+  @media (max-width: 600px) {
+    width: 95%;
+  }
 `
 
 const RightSection = styled.div`
@@ -47,9 +71,13 @@ const RightSection = styled.div`
   margin-left: 1rem;
   padding: 2rem;
   /* border: 1px solid #fff1db; */
-  border-radius: 10px;
+  border-radius: 4px;
   background-color: #fff8ef;
   z-index: 100;
+
+  @media (max-width: 600px) {
+    margin-left: 0;
+  }
 
   h2 {
     font-size: 1.1rem;
