@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import resume from '../../public/Baptiste-Firket-Resume.pdf'
 
 const PageWrapper = styled.div`
   background-color: #282828;
@@ -63,14 +64,14 @@ const RightSection = styled.div`
 const P = styled.p`
   width: fit-content;
   margin: 0 auto;
-  padding-top: 150px;
+  padding-top: 110px;
   font-size: 1.3rem;
 `
 
 const Contact = styled.div`
   text-align: center;
   width: 310px;
-  margin: 20vh auto;
+  margin: 15vh auto;
   padding: 1rem 2rem;
   position: relative;
   z-index: 110;
@@ -161,11 +162,7 @@ const About = () => (
           <p>
             Here is a summary of who I am and what I do. For more details, you
             can find my full resume{' '}
-            <HereA
-              href="/Baptiste-Firket-Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <HereA href={resume} target="_blank" rel="noopener noreferrer">
               here
             </HereA>
           </p>
@@ -210,7 +207,7 @@ const About = () => (
         </RightSection>
       </FlexSection>
       <P id="contact">
-        If you need more informations, want to discuss or even hire me, feel
+        If you need more informations, want to discuss or work with me, feel
         free to contact me at :
       </P>
       <Contact>
@@ -222,15 +219,31 @@ const About = () => (
         <h5>+32 491 98 86 60</h5>
         <FlexDiv>
           <Github>
-            <a href="https://github.com/baptistefkt">github</a>
+            <a
+              href="https://github.com/baptistefkt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github
+            </a>
           </Github>
           <Linkedin>
-            <a href="https://www.linkedin.com/in/baptiste-firket-7b6334101/">
+            <a
+              href="https://www.linkedin.com/in/baptiste-firket-7b6334101/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               linkedin
             </a>
           </Linkedin>
           <Twitter>
-            <a href="https://twitter.com/baptistefkt">twitter</a>
+            <a
+              href="https://twitter.com/baptistefkt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              twitter
+            </a>
           </Twitter>
         </FlexDiv>
       </Contact>
