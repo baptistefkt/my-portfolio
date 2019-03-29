@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import resume from '../../public/Baptiste-Firket-Resume.pdf'
+import resume from './assets/Baptiste-Firket-Resume.pdf'
 
 const PageWrapper = styled.div`
   background-color: #282828;
