@@ -33,6 +33,7 @@ const Gyuto = () => (
       summary={summary}
       year="2018"
       type="Custom website"
+      // eslint-disable-next-line
       role="Front-end development"
       techno="ReactJS, SASS"
       collab="Pedro Seromenho, Liliane Mamane, Geoffrey Poelmans"
