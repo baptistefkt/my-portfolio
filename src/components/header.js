@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import CTA from './CTA'
 
 const MyHeader = styled.header`
@@ -11,6 +13,10 @@ const MyHeader = styled.header`
   position: fixed;
   z-index: 10;
   padding: 0.5rem 7%;
+
+  @media (max-width: 700px) {
+    z-index: 250;
+  }
 `
 const NavContainer = styled.div`
   display: flex;
@@ -41,68 +47,155 @@ const NavContainer = styled.div`
   nav {
     display: flex;
     align-items: center;
-  }
 
-  ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
+    @media (max-width: 700px) {
+      display: none;
+    }
 
-    li {
-      margin: 0 20px;
-      transition: all 0.2s ease-in;
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      margin: 0;
 
-      &:last-of-type {
-        margin-right: 60px;
-      }
+      li {
+        margin: 0 20px;
+        transition: all 0.2s ease-in;
 
-      &:hover {
-        transform: skewY(-8deg);
-      }
+        &:last-of-type {
+          margin-right: 60px;
+        }
 
-      a {
-        text-decoration: none;
-        color: #ffca96;
-        font-weight: 700;
-        font-size: 0.9rem;
+        &:hover {
+          transform: skewY(-8deg);
+        }
+
+        a {
+          text-decoration: none;
+          color: #ffca96;
+          font-weight: 700;
+          font-size: 0.9rem;
+        }
       }
     }
   }
 `
 
-const Header = ({ siteTitle }) => (
-  <MyHeader>
-    <NavContainer>
-      <Link to="/">
-        <div className="logoContainer">
-          <h2>bfkt.dev</h2>
-        </div>
-      </Link>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/works">Work</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-        <CTA text="Contact Me" />
-      </nav>
-    </NavContainer>
-  </MyHeader>
-)
+const BurgerButton = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 300;
+  color: #ffca96;
+  font-size: 1.6rem;
+  @media (min-width: 699px) {
+    display: none;
+  }
+`
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+const BurgerMenu = styled.div`
+  height: 101vh;
+  width: 75vw;
+  background-color: #282828;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 250;
+  transform: ${props => props.position};
+  transition: all 0.3s ease-in-out;
+  padding: 60px 10px;
+
+  nav {
+    z-index: 300;
+    display: block;
+
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+
+      li {
+        padding: 30px 20px;
+        transition: all 0.2s ease-in;
+        width: 95%;
+        border-bottom: 1px solid #333;
+        text-transform: uppercase;
+
+        a {
+          font-size: 1.2rem;
+        }
+
+        &:last-of-type {
+          margin-right: 20px;
+        }
+
+        &:hover {
+          transform: none;
+        }
+      }
+    }
+  }
+`
+
+const Header = ({ siteTitle }) => {
+  const [menu, setMenu] = useState(false)
+
+  return (
+    <MyHeader>
+      <NavContainer>
+        <Link to="/">
+          <div className="logoContainer">
+            <h2>bfkt.dev</h2>
+          </div>
+        </Link>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/works">Work</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+          <CTA text="Contact Me" />
+        </nav>
+        <BurgerMenu position={menu ? 'translateX(0)' : 'translateX(100%)'}>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/" onClick={() => setMenu(!menu)}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/works" onClick={() => setMenu(!menu)}>
+                  Work
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" onClick={() => setMenu(!menu)}>
+                  About
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </BurgerMenu>
+        <BurgerButton onClick={() => setMenu(!menu)}>
+          <FontAwesomeIcon icon={menu ? faTimes : faBars} />
+        </BurgerButton>
+      </NavContainer>
+    </MyHeader>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
+
+// Header.defaultProps = {
+//   siteTitle: ``,
+// }
 
 export default Header
