@@ -88,6 +88,9 @@ const BurgerButton = styled.button`
   z-index: 300;
   color: #ffca96;
   font-size: 1.6rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
   @media (min-width: 699px) {
     display: none;
   }
