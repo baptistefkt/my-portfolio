@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 const Button = styled.button`
@@ -12,11 +13,11 @@ const Button = styled.button`
   text-transform: uppercase;
   font-weight: 700;
   z-index: 100;
-  transition: 0.1s ease-in;
+  transition: 0.2s ease-in;
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-1px);
+    opacity: 0.9;
   }
 
   &:focus {
@@ -24,12 +25,22 @@ const Button = styled.button`
   }
 `
 
-const CTA = ({ text, color }) => {
+const CTA = ({ text, href }) => {
   return (
-    <Link to="/about/#contact">
+    <Link to={href}>
       <Button>{text}</Button>
     </Link>
   )
+}
+
+CTA.propTypes = {
+  text: PropTypes.string,
+  href: PropTypes.string,
+}
+
+CTA.defaultProps = {
+  text: `Click me`,
+  href: `/`,
 }
 
 export default CTA
