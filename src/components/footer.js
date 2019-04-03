@@ -21,6 +21,12 @@ const StyledFooter = styled.footer`
   p {
     margin-bottom: 2px;
   }
+
+  address {
+    p {
+      font-style: normal;
+    }
+  }
 `
 
 const Copyright = styled.div`
