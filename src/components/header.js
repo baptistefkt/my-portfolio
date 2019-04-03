@@ -34,7 +34,7 @@ const NavContainer = styled.div`
 
     &:hover {
       transform: skewY(8deg);
-      opacity: 0.9;
+      opacity: 0.8;
     }
 
     h2 {
@@ -60,14 +60,14 @@ const NavContainer = styled.div`
 
       li {
         margin: 0 20px;
-        transition: all 0.2s ease-in;
+        transition: all 0.1s ease-in;
 
         &:last-of-type {
           margin-right: 60px;
         }
 
         &:hover {
-          transform: skewY(-8deg);
+          opacity: 0.7;
         }
 
         a {
@@ -117,14 +117,14 @@ const BurgerMenu = styled.div`
       align-items: flex-start;
 
       li {
-        padding: 30px 20px;
+        padding: 25px 20px;
         transition: all 0.2s ease-in;
         width: 95%;
-        border-bottom: 1px solid #333;
+        border-bottom: 2px solid #444;
         text-transform: uppercase;
 
         a {
-          font-size: 1.2rem;
+          font-size: 1rem;
         }
 
         &:last-of-type {
@@ -162,7 +162,7 @@ const Header = ({ siteTitle }) => {
               <Link to="/about">About</Link>
             </li>
           </ul>
-          <CTA text="Contact Me" />
+          <CTA text="Contact Me" href="/about/#contact" />
         </nav>
         <BurgerMenu position={menu ? 'translateX(0)' : 'translateX(100%)'}>
           <nav>
