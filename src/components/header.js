@@ -3,7 +3,11 @@ import { Link } from 'gatsby'
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import {
+  faBars,
+  faTimes,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons'
 import CTA from './CTA'
 
 const MyHeader = styled.header`
@@ -59,8 +63,9 @@ const NavContainer = styled.div`
       margin: 0;
 
       li {
-        margin: 0 20px;
-        transition: all 0.1s ease-in;
+        margin: 0 16px;
+        padding: 0 4px;
+        /* border-radius: 5px; */
 
         &:last-of-type {
           margin-right: 60px;
@@ -106,7 +111,7 @@ const BurgerMenu = styled.div`
   z-index: 250;
   transform: ${props => props.position};
   transition: all 0.3s ease-in-out;
-  padding: 60px 10px;
+  padding: 100px 10px;
 
   nav {
     z-index: 300;
@@ -117,14 +122,16 @@ const BurgerMenu = styled.div`
       align-items: flex-start;
 
       li {
-        padding: 25px 20px;
+        padding: 15px 5px;
         transition: all 0.2s ease-in;
         width: 95%;
-        border-bottom: 2px solid #444;
-        text-transform: uppercase;
+        border-bottom: 1px solid #444;
+        border-radius: 0;
 
         a {
-          font-size: 1rem;
+          font-size: 1.05rem;
+          display: flex;
+          justify-content: space-between;
         }
 
         &:last-of-type {
@@ -139,7 +146,7 @@ const BurgerMenu = styled.div`
   }
 `
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [menu, setMenu] = useState(false)
 
   return (
@@ -170,16 +177,25 @@ const Header = ({ siteTitle }) => {
               <li>
                 <Link to="/" onClick={() => setMenu(!menu)}>
                   Home
+                  <span>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link to="/works" onClick={() => setMenu(!menu)}>
                   Work
+                  <span>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link to="/about" onClick={() => setMenu(!menu)}>
                   About
+                  <span>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </span>
                 </Link>
               </li>
             </ul>
