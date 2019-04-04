@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import contentfulLogo from '../images/contentful.png'
+
 const StyledFooter = styled.footer`
   background-color: #282828;
   color: #aaa;
@@ -23,6 +25,8 @@ const StyledFooter = styled.footer`
   }
 
   address {
+    margin-bottom: 0;
+
     p {
       font-style: normal;
     }
@@ -31,6 +35,14 @@ const StyledFooter = styled.footer`
 
 const Copyright = styled.div`
   margin-bottom: 1rem;
+
+  span {
+    img {
+      width: 14px;
+      margin: 0 2px;
+      vertical-align: middle;
+    }
+  }
 `
 
 const Footer = () => (
@@ -39,8 +51,11 @@ const Footer = () => (
       © {new Date().getFullYear()}, all rights reserved. This website was
       designed and developed by me with
       {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-      {`  `}🚀
+      <a href="https://www.gatsbyjs.org">Gatsby </a>
+      {`  `}🚀 and <a href="https://www.contentful.com/">Contentful</a>{' '}
+      <span>
+        <img src={contentfulLogo} alt="contentful logo" />
+      </span>
     </Copyright>
     <address>
       <p>baptistefirket@gmail.com</p>

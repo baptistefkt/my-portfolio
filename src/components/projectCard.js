@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Grid from '@material-ui/core/Grid'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
-import Image from '../components/image'
+// import Image from '../components/image'
 
 // -------------- CSS --------------- //
 
@@ -66,18 +66,27 @@ const Tag = styled.div`
 
 // -------------- COMPONENT --------------- //
 
-const ProjectCard = ({ imgLabel, title, slug, description, tag }) => (
+const ProjectCard = ({
+  img,
+  title,
+  slug,
+  year,
+  type,
+  role,
+  techno,
+  collab,
+}) => (
   <ProjectContainer>
     <TitleAndTag>
       <h3>{title}</h3>
       <Tag>
-        <span>{tag}</span>
+        <span>{techno[0]}</span>
       </Tag>
     </TitleAndTag>
-    <p>{description}</p>
+    <p>{`${type[0]} | ${role}`}</p>
     <Link to={`/work/${slug}`}>
       <ImgWrapper>
-        <Image imgName={imgLabel} />
+        <Img fluid={img[0].fluid} alt={img[0].title} />
       </ImgWrapper>
     </Link>
   </ProjectContainer>

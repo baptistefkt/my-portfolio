@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -18,6 +19,7 @@ const HeaderSection = styled.section`
     font-size: 65px;
     font-weight: 700;
     width: 60%;
+    max-width: 900px;
     margin: 2rem auto;
     margin-top: 20vh;
   }
@@ -26,6 +28,7 @@ const HeaderSection = styled.section`
     font-size: 30px;
     line-height: 1.3;
     width: 60%;
+    max-width: 900px;
     margin: 0 auto;
   }
 
@@ -70,7 +73,7 @@ const H2 = styled.h2`
   width: fit-content;
 `
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <HeaderSection>
@@ -88,8 +91,36 @@ const IndexPage = () => (
       </p> */}
     </HeaderSection>
     <H2>My Work</H2>
-    <WorksSection />
+    <WorksSection data={data} />
   </Layout>
 )
 
 export default IndexPage
+
+export const query = graphql`
+  query allProjectQueryHome {
+    allContentfulProject {
+      edges {
+        node {
+          title
+          summary {
+            summary
+          }
+          slug
+          screenshot {
+            title
+            fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid
+            }
+          }
+          year
+          type
+          role
+          techno
+          collab
+          link
+        }
+      }
+    }
+  }
+`

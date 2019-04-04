@@ -6,7 +6,7 @@ import ProjectCard from './projectCard'
 const WorkContainer = styled.div`
   width: 90%;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 30px 0;
   margin-bottom: 100px;
   display: grid;
@@ -18,9 +18,35 @@ const WorkContainer = styled.div`
   }
 `
 
-const WorksSection = () => (
+const WorksSection = ({ data }) => (
   <WorkContainer>
-    <ProjectCard
+    {data.allContentfulProject.edges.map(({ node }) => {
+      const {
+        title,
+        summary,
+        slug,
+        screenshot,
+        year,
+        type,
+        role,
+        techno,
+        collab,
+      } = node
+      return (
+        <ProjectCard
+          img={screenshot}
+          title={title}
+          slug={slug}
+          summary={summary}
+          year={year}
+          type={type}
+          role={role}
+          techno={techno}
+          collab={collab}
+        />
+      )
+    })}
+    {/* <ProjectCard
       imgLabel="gyuto-home.png"
       title="Gyütö"
       slug="gyuto"
@@ -40,7 +66,7 @@ const WorksSection = () => (
       slug="portfolio"
       description="Personal website | Desing &amp; Front-End"
       tag="Gatsby"
-    />
+    /> */}
   </WorkContainer>
 )
 
