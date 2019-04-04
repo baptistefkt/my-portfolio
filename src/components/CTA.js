@@ -9,15 +9,17 @@ const Button = styled.button`
   padding: 0.4rem 1.1rem;
   color: white;
   background: linear-gradient(to right top, #ffca96, #fd9653);
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   font-weight: 700;
   z-index: 100;
-  transition: 0.2s ease-in;
+  transition: all 0.3s;
   cursor: pointer;
 
   &:hover {
-    opacity: 0.9;
+    /* opacity: 0.9; */
+    background: linear-gradient(to right, #ffca96, #fd9653);
+    transform: translateY(-1px);
   }
 
   &:focus {
