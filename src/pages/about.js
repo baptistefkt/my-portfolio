@@ -8,7 +8,8 @@ import resume from './assets/Baptiste-Firket-Resume.pdf'
 const PageWrapper = styled.div`
   background-color: #282828;
   color: #ddd;
-  padding: 130px 5%;
+  padding: 110px 5%;
+  width: 100%;
 
   h1,
   h2,
@@ -23,6 +24,11 @@ const PageWrapper = styled.div`
   h2 {
     font-size: 2.2rem;
   }
+`
+
+const Wrapper = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
 `
 
 const FlexSection = styled.div`
@@ -58,7 +64,11 @@ const HereA = styled.a`
   color: #ffca96 !important;
 `
 
-const ExperienceDiv = styled.div``
+const ExperienceDiv = styled.div`
+  em {
+    font-size: 0.9rem;
+  }
+`
 
 const RightSection = styled.div`
   flex: 1;
@@ -168,97 +178,100 @@ const About = () => (
   <Layout>
     <SEO title="About Me" />
     <PageWrapper>
-      <FlexSection>
-        <LeftSection>
-          <h1>I'm Baptiste Firket</h1>
-          <p>
-            Here is a summary of who I am and what I do. For more details, you
-            can find my full resume{' '}
-            <HereA href={resume} target="_blank" rel="noopener noreferrer">
-              here
-            </HereA>
-          </p>
+      <Wrapper>
+        <FlexSection>
+          <LeftSection>
+            <h1>I'm Baptiste Firket</h1>
+            <p>
+              Here is a summary of who I am and what I do. For more details, you
+              can find my full resume{' '}
+              <HereA href={resume} target="_blank" rel="noopener noreferrer">
+                here
+              </HereA>
+            </p>
 
-          <ExperienceDiv>
-            <h2>Experience</h2>
-            <h3>
-              <a href="http://www.cuustomer.com">cuustomer.com</a>
-            </h3>
+            <ExperienceDiv>
+              <h2>Experience</h2>
+              <h3>
+                <a href="http://www.cuustomer.com">cuustomer.com</a>
+              </h3>
+              <p>
+                <em>
+                  " I worked with Baptiste in the context of an early stage
+                  startup. Baptiste came across as very motivated and eager to
+                  learn, which are key aspects that I typically look for when
+                  hiring young professionals. That aspect, combined to the fact
+                  that he had the opportunity to work with a state-of-the-art
+                  web stack, would make him a very good addition to a web team
+                  as a junior developer "
+                </em>
+              </p>
+              <p>
+                <span>
+                  - Thibaut Van Spaandonck - Founder &amp; Principal Consultant
+                  at Urge2code
+                </span>
+              </p>
+            </ExperienceDiv>
+          </LeftSection>
+          <RightSection>
+            <h2>What I Do</h2>
+            <h3>Front End</h3>
             <p>
-              <em>
-                " I worked with Baptiste in the context of an early stage
-                startup for which I defined the technical strategy and acted as
-                interim CTO. Baptiste came across as very motivated and eager to
-                learn, which are key aspects that I typically look for when
-                hiring young professionals. That aspect, combined to the fact
-                that he had the opportunity to work with a state-of-the-art web
-                stack, would make him a very good addition to a web team as a
-                junior developer "
-              </em>
+              HTML5, CSS3, SASS, JavaScript, ReactJS, NextJS, Gatsby,
+              Styled-components, CSS Frameworks (Bootstrap, Bulma, Material UI),
+              Apollo-graphQL
             </p>
-            <p>
-              <span>
-                - Thibaut Van Spaandonck - Founder &amp; Principal Consultant at
-                Urge2code
-              </span>
-            </p>
-          </ExperienceDiv>
-        </LeftSection>
-        <RightSection>
-          <h2>What I Do</h2>
-          <h3>Front End</h3>
-          <p>
-            HTML5, CSS3, SASS, JavaScript, ReactJS, NextJS, Gatsby,
-            Styled-components, CSS Frameworks (Bootstrap, Bulma, Material UI),
-            Apollo-graphQL
-          </p>
-          <h3>Back End</h3>
-          <p>NodeJS, ExpressJS, GraphQL, MySQL, MongoDB</p>
-          <h3>Tools</h3>
-          <p>Git, Contentful, Algolia, Figma, Wordpress, Netlify, Heroku</p>
-        </RightSection>
-      </FlexSection>
-      <P id="contact">
-        If you need more informations, want to discuss or work with me, feel
-        free to contact me at :
-      </P>
-      <Contact>
-        <h3>Baptiste Firket</h3>
-        <h4>Web Developer</h4>
-        <h5>
-          <a href="mailto:baptistefirket@gmail.com">baptistefirket@gmail.com</a>
-        </h5>
-        <h5>+32 491 98 86 60</h5>
-        <FlexDiv>
-          <Github>
-            <a
-              href="https://github.com/baptistefkt"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github
+            <h3>Back End</h3>
+            <p>NodeJS, ExpressJS, GraphQL, MySQL, MongoDB</p>
+            <h3>Tools</h3>
+            <p>Git, Contentful, Algolia, Figma, Wordpress, Netlify, Heroku</p>
+          </RightSection>
+        </FlexSection>
+        <P id="contact">
+          If you need more informations, want to discuss or work with me, feel
+          free to contact me at :
+        </P>
+        <Contact>
+          <h3>Baptiste Firket</h3>
+          <h4>Web Developer</h4>
+          <h5>
+            <a href="mailto:baptistefirket@gmail.com">
+              baptistefirket@gmail.com
             </a>
-          </Github>
-          <Linkedin>
-            <a
-              href="https://www.linkedin.com/in/baptiste-firket-7b6334101/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin
-            </a>
-          </Linkedin>
-          <Twitter>
-            <a
-              href="https://twitter.com/baptistefkt"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              twitter
-            </a>
-          </Twitter>
-        </FlexDiv>
-      </Contact>
+          </h5>
+          <h5>+32 491 98 86 60</h5>
+          <FlexDiv>
+            <Github>
+              <a
+                href="https://github.com/baptistefkt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github
+              </a>
+            </Github>
+            <Linkedin>
+              <a
+                href="https://www.linkedin.com/in/baptiste-firket-7b6334101/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                linkedin
+              </a>
+            </Linkedin>
+            <Twitter>
+              <a
+                href="https://twitter.com/baptistefkt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                twitter
+              </a>
+            </Twitter>
+          </FlexDiv>
+        </Contact>
+      </Wrapper>
     </PageWrapper>
   </Layout>
 )
