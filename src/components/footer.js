@@ -8,8 +8,9 @@ const StyledFooter = styled.footer`
   color: #aaa;
   text-align: center;
   min-height: 50px;
-  padding: 1rem 2rem;
-  font-size: 0.8rem;
+  padding: 2rem;
+  padding-bottom: 0.8rem;
+  font-size: 0.7rem;
 
   a {
     text-decoration: none;
