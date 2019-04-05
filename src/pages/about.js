@@ -35,7 +35,7 @@ const FlexSection = styled.div`
   display: flex;
   margin-bottom: 4rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: column;
   }
 `
@@ -44,7 +44,7 @@ const LeftSection = styled.div`
   flex: 1;
   padding: 1rem 2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     padding: 1rem 0;
   }
 
