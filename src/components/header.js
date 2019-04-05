@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
@@ -146,9 +146,7 @@ const BurgerMenu = styled.div`
   }
 `
 
-const Header = () => {
-  const [menu, setMenu] = useState(false)
-
+const Header = ({ menu, setMenu }) => {
   return (
     <MyHeader>
       <NavContainer>
