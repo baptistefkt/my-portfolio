@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Header from './header'
@@ -22,26 +21,26 @@ const AppContainer = styled.div`
   }
 `
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <AppContainer>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-        <Footer />
-      </AppContainer>
-    )}
-  />
-)
+const Main = styled.main`
+  filter: ${props => props.isOpen};
+`
+
+const Layout = ({ children }) => {
+  const [menu, setMenu] = useState(false)
+
+  return (
+    <AppContainer>
+      <Header menu={menu} setMenu={setMenu} />
+      <Main
+        isOpen={menu ? 'contrast(60%) !important' : 'contrast(100%) !important'}
+      >
+        {/* <Main isOpen={menu ? 'brightness(0.6)' : 'brightness(1)'}></Main> */}
+        {children}
+      </Main>
+      <Footer />
+    </AppContainer>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
