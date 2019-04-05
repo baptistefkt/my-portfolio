@@ -18,56 +18,43 @@ const WorkContainer = styled.div`
   }
 `
 
-const WorksSection = ({ data }) => (
-  <WorkContainer>
-    {data.allContentfulProject.edges.map(({ node }) => {
-      const {
-        title,
-        summary,
-        slug,
-        screenshot,
-        year,
-        type,
-        role,
-        techno,
-        collab,
-      } = node
-      return (
-        <ProjectCard
-          img={screenshot}
-          title={title}
-          slug={slug}
-          summary={summary}
-          year={year}
-          type={type}
-          role={role}
-          techno={techno}
-          collab={collab}
-        />
-      )
-    })}
-    {/* <ProjectCard
-      imgLabel="gyuto-home.png"
-      title="Gyütö"
-      slug="gyuto"
-      description="Custom website | Front-End development"
-      tag="ReactJS"
-    />
-    <ProjectCard
-      imgLabel="cuustomer-home.png"
-      title="Cuustomer.com"
-      slug="cuustomer"
-      description="Web app | Front-end development, SEO optimisation"
-      tag="NextJS"
-    />
-    <ProjectCard
-      imgLabel="portfolio-home.png"
-      title="Portfolio"
-      slug="portfolio"
-      description="Personal website | Desing &amp; Front-End"
-      tag="Gatsby"
-    /> */}
-  </WorkContainer>
-)
+const WorksSection = ({ data }) => {
+  return (
+    <WorkContainer>
+      {data.allContentfulProject.edges
+        .sort((a, b) => {
+          return a.node.order - b.node.order
+        })
+        .map(({ node }) => {
+          const {
+            title,
+            summary,
+            slug,
+            screenshot,
+            year,
+            type,
+            role,
+            techno,
+            collab,
+            order,
+          } = node
+          return (
+            <ProjectCard
+              key={order}
+              img={screenshot}
+              title={title}
+              slug={slug}
+              summary={summary}
+              year={year}
+              type={type}
+              role={role}
+              techno={techno}
+              collab={collab}
+            />
+          )
+        })}
+    </WorkContainer>
+  )
+}
 
 export default WorksSection
