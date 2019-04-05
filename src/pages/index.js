@@ -66,11 +66,15 @@ const HeaderSection = styled.section`
 const H2 = styled.h2`
   margin-left: 7%;
   margin-top: 60px;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 400;
   position: relative;
   z-index: 110;
   width: fit-content;
+
+  span {
+    font-weight: 700;
+  }
 `
 
 const IndexPage = ({ data }) => (
@@ -90,8 +94,10 @@ const IndexPage = ({ data }) => (
         I do.
       </p> */}
     </HeaderSection>
-    <H2>My Work</H2>
-    <WorksSection data={data} />
+    <H2>
+      My latest <span>Work</span>
+    </H2>
+    <WorksSection data={data} index={true} />
   </Layout>
 )
 
@@ -119,6 +125,7 @@ export const query = graphql`
           techno
           collab
           link
+          order
         }
       }
     }
