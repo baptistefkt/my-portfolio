@@ -13,8 +13,8 @@ const PageWrapper = styled.div`
     margin-left: 7%;
     position: relative;
     z-index: 110;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 400;
     width: fit-content;
   }
 `
@@ -53,6 +53,7 @@ export const query = graphql`
           techno
           collab
           link
+          order
         }
       }
     }
