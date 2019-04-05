@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from './layout'
 import SEO from './seo'
-// import Image from '../components/image'
 
 const PageWrapper = styled.div`
   width: 90%;
@@ -14,7 +15,7 @@ const PageWrapper = styled.div`
   padding: 90px 0 50px 0;
 
   h1 {
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-left: 1rem;
     margin-bottom: 0.8rem;
@@ -39,7 +40,7 @@ const LeftSection = styled.div`
   flex: 2;
   margin-right: 1rem;
   padding: 0 1rem;
-  height: 80vh;
+  height: 100vh;
   overflow-y: scroll;
 
   .gatsby-image-wrapper {
@@ -62,7 +63,7 @@ const SummaryP = styled.p`
   width: 80%;
   font-size: 1.1rem;
   line-height: 1.5;
-  color: #888;
+  color: #777;
   position: relative;
   z-index: 100;
 
@@ -74,6 +75,7 @@ const SummaryP = styled.p`
 const RightSection = styled.div`
   flex: 1;
   margin-left: 1rem;
+  height: fit-content;
   padding: 2rem;
   /* border: 1px solid #fff1db; */
   border-radius: 4px;
@@ -85,36 +87,46 @@ const RightSection = styled.div`
   }
 
   h2 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    color: #444;
+    color: #437c90;
+    font-size: 22px;
 
-    span {
-      color: #437c90;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-left: 10px;
+    svg {
+      font-size: 16px;
+      margin-left: 8px;
+      margin-bottom: 1px;
     }
   }
 
-  a {
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
     color: #437c90;
-    text-decoration: none;
     font-weight: 700;
-    font-size: 0.8rem;
-    text-align: center;
+  }
 
-    div {
-      border-radius: 30px;
-      border: 2px solid #437c90;
-      width: fit-content;
-      padding: 8px 15px;
-      margin-top: 5rem;
+  p {
+    color: #7eaab7;
+    font-size: 15px;
+    margin-bottom: 0.8rem;
+  }
 
-      &:hover {
-        opacity: 0.85;
-      }
+  div {
+    border-radius: 30px;
+    border: 2px solid #437c90;
+    width: fit-content;
+    padding: 8px 15px;
+    margin-top: 2rem;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    a {
+      color: #437c90;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-align: center;
     }
   }
 `
@@ -146,50 +158,46 @@ const ProjectLayout = ({ data }) => {
           </LeftSection>
           <RightSection>
             <h2>
-              Project : <span>{title}</span>
+              Project info <FontAwesomeIcon icon={faInfoCircle} />
             </h2>
-            <h2>
-              Year : <span>{year}</span>
-            </h2>
-            <h2>
-              Type :{' '}
-              <span>
-                {type.map((item, index) =>
-                  type.length === index + 1 ? `${item}` : `${item}, `
-                )}
-              </span>
-            </h2>
-
-            <h2>
-              Role :{' '}
-              <span>
-                {role.map((item, index) =>
-                  role.length === index + 1 ? `${item}` : `${item}, `
-                )}
-              </span>
-            </h2>
-            <h2>
-              Technologies :{' '}
-              <span>
-                {techno.map((item, index) =>
-                  techno.length === index + 1 ? `${item}` : `${item}, `
-                )}
-              </span>
-            </h2>
+            <h3>Name :</h3>
+            <p>{title}</p>
+            <h3>Year :</h3>
+            <p>{year.substring(0, 4)}</p>
+            <h3>Type :</h3>
+            <p>
+              {type.map((item, index) =>
+                type.length === index + 1 ? `${item}` : `${item}, `
+              )}
+            </p>
+            <h3>Role : </h3>
+            <p>
+              {role.map((item, index) =>
+                role.length === index + 1 ? `${item}` : `${item}, `
+              )}
+            </p>
+            <h3>Technologies : </h3>
+            <p>
+              {techno.map((item, index) =>
+                techno.length === index + 1 ? `${item}` : `${item}, `
+              )}
+            </p>
             {collab !== null && (
-              <h2>
-                Collaboration :{' '}
-                <span>
+              <>
+                <h3>Collaboration : </h3>
+                <p>
                   {collab.map((item, index) =>
                     collab.length === index + 1 ? `${item}` : `${item}, `
                   )}
-                </span>
-              </h2>
+                </p>
+              </>
             )}
             {link !== null && (
-              <a href={link} target="_blank" rel="noopener noreferrer">
-                <div>→ Visit the website</div>
-              </a>
+              <div>
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                  → Visit the website
+                </a>
+              </div>
             )}
           </RightSection>
         </FlexDiv>
