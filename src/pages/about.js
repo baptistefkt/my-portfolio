@@ -8,7 +8,7 @@ import resume from './assets/Baptiste-Firket-Resume.pdf'
 const PageWrapper = styled.div`
   background-color: #282828;
   color: #ddd;
-  padding: 110px 5%;
+  padding: 100px 5%;
   width: 100%;
 
   h1,
@@ -62,6 +62,10 @@ const LeftSection = styled.div`
 const HereA = styled.a`
   text-decoration: none;
   color: #ffca96 !important;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const ExperienceDiv = styled.div`
@@ -74,7 +78,7 @@ const RightSection = styled.div`
   flex: 1;
   padding: 1rem 2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     padding: 1rem 0;
   }
 `
@@ -91,8 +95,6 @@ const Contact = styled.div`
   width: 310px;
   margin: 15vh auto;
   padding: 1rem 2rem;
-  position: relative;
-  z-index: 110;
   color: #ddd;
   border: 1px solid #ffca96;
   border-radius: 5px;

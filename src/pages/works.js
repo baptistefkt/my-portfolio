@@ -7,12 +7,11 @@ import SEO from '../components/seo'
 import WorksSection from '../components/worksSection'
 
 const PageWrapper = styled.div`
-  padding: 110px 0;
+  padding: 100px 0 0 0;
 
   h1 {
-    margin-left: 7%;
-    position: relative;
-    z-index: 110;
+    margin-left: 5%;
+    margin-bottom: 0;
     font-size: 2.2rem;
     font-weight: 400;
     width: fit-content;

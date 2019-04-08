@@ -12,15 +12,16 @@ import CTA from './CTA'
 
 const MyHeader = styled.header`
   background-color: transparent;
+  position: absolute;
+  z-index: 10;
+  top: 0;
   width: 100%;
   min-height: 70px;
-  position: fixed;
-  z-index: 10;
   padding: 0.5rem 7%;
 
-  @media (max-width: 700px) {
+  /* @media (max-width: 700px) {
     z-index: 250;
-  }
+  } */
 `
 const NavContainer = styled.div`
   display: flex;
@@ -87,7 +88,7 @@ const NavContainer = styled.div`
 `
 
 const BurgerButton = styled.button`
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   z-index: 300;
@@ -103,9 +104,9 @@ const BurgerButton = styled.button`
 
 const BurgerMenu = styled.div`
   height: 101vh;
-  width: 75vw;
+  width: 101vw;
   background-color: #282828;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 250;
@@ -113,7 +114,7 @@ const BurgerMenu = styled.div`
   transition: all 0.3s ease-in-out;
   padding: 100px 10px;
 
-  nav {
+  .burgerNav {
     z-index: 300;
     display: block;
 
@@ -170,7 +171,7 @@ const Header = ({ menu, setMenu }) => {
           <CTA text="Contact Me" href="/about/#contact" />
         </nav>
         <BurgerMenu position={menu ? 'translateX(0)' : 'translateX(100%)'}>
-          <nav>
+          <nav className="burgerNav">
             <ul>
               <li>
                 <Link to="/" onClick={() => setMenu(!menu)}>

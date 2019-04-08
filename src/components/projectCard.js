@@ -11,8 +11,6 @@ const ProjectContainer = styled.div`
   padding: 2rem;
   border-radius: 4px;
   background-color: #fff8ef;
-  position: relative;
-  z-index: 100;
 
   @media (max-width: 700px) {
     margin-bottom: 2rem;

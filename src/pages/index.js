@@ -13,7 +13,8 @@ const HeaderSection = styled.section`
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   color: white;
   height: 130vh;
-  padding: 80px 5%;
+  position: relative;
+  padding: 100px 5%;
 
   h1 {
     font-size: 65px;
@@ -64,8 +65,9 @@ const HeaderSection = styled.section`
 `
 
 const H2 = styled.h2`
-  margin-left: 7%;
+  margin-left: 5%;
   margin-top: 60px;
+  margin-bottom: 0;
   font-size: 2.2rem;
   font-weight: 400;
   position: relative;
@@ -79,7 +81,7 @@ const H2 = styled.h2`
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" />
     <HeaderSection>
       <h1>Baptiste Firket</h1>
       <p>

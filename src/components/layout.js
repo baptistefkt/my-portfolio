@@ -19,10 +19,10 @@ const AppContainer = styled.div`
   h6 {
     font-family: 'Nunito Sans', sans-serif;
   }
-`
 
-const Main = styled.main`
-  filter: ${props => props.isOpen};
+  main {
+    height: 100%;
+  }
 `
 
 const Layout = ({ children }) => {
@@ -31,12 +31,7 @@ const Layout = ({ children }) => {
   return (
     <AppContainer>
       <Header menu={menu} setMenu={setMenu} />
-      <Main
-        isOpen={menu ? 'contrast(60%) !important' : 'contrast(100%) !important'}
-      >
-        {/* <Main isOpen={menu ? 'brightness(0.6)' : 'brightness(1)'}></Main> */}
-        {children}
-      </Main>
+      <main>{children}</main>
       <Footer />
     </AppContainer>
   )

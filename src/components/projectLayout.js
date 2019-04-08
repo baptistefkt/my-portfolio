@@ -22,7 +22,7 @@ const PageWrapper = styled.div`
     position: relative;
     z-index: 100;
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       margin-left: 0;
     }
   }
@@ -31,7 +31,7 @@ const PageWrapper = styled.div`
 const FlexDiv = styled.div`
   display: flex;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: column;
   }
 `
@@ -47,7 +47,7 @@ const LeftSection = styled.div`
     margin: 0 5rem 3rem 0;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     overflow-y: unset;
     height: unset;
     margin-right: 0;
@@ -67,7 +67,7 @@ const SummaryP = styled.p`
   position: relative;
   z-index: 100;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     width: 95%;
   }
 `
@@ -82,7 +82,7 @@ const RightSection = styled.div`
   background-color: #fff8ef;
   z-index: 100;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     margin-left: 0;
   }
 
