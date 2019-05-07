@@ -94,7 +94,9 @@ const ProjectCard = ({
 }) => (
   <ProjectContainer>
     <TitleAndTag>
-      <h3>{title}</h3>
+      <Link to={`/work/${slug}`}>
+        <h3>{title}</h3>
+      </Link>
       <Tag>
         <span>{techno[0]}</span>
       </Tag>
