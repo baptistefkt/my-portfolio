@@ -143,6 +143,7 @@ const ProjectLayout = ({ data }) => {
     collab,
     link,
   } = data.contentfulProject
+  console.log(typeof link)
   return (
     <Layout>
       <SEO title={title} />
@@ -151,9 +152,8 @@ const ProjectLayout = ({ data }) => {
         <FlexDiv>
           <LeftSection>
             <SummaryP>{summary.summary}</SummaryP>
-            {screenshot.map(item => (
-              <Img fluid={item.fluid} alt={item.title} />
-              // <Image key={image.name} imgName={image.name} />
+            {screenshot.map((item, index) => (
+              <Img key={index} fluid={item.fluid} alt={item.title} />
             ))}
           </LeftSection>
           <RightSection>
@@ -195,7 +195,9 @@ const ProjectLayout = ({ data }) => {
             {link !== null && (
               <div>
                 <a href={link} target="_blank" rel="noopener noreferrer">
-                  → Visit the website
+                  {link.includes('github')
+                    ? '→ Visit the Repository'
+                    : '→ Visit the Website'}
                 </a>
               </div>
             )}
