@@ -23,6 +23,10 @@ const AppContainer = styled.div`
   main {
     height: 100%;
   }
+
+  a {
+    text-decoration: none;
+  }
 `
 
 const Layout = ({ children }) => {
